@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React from 'react';
+import {ahorcado} from '../img/images';
+
 
 export const Ahorcado = () => {
   return (
     <div className='ahorcado'>
 
-            <p>Ahorcado</p>
+          {console.log(ahorcado.ahorcado0)}
 
-          </div>
+    </div>
   )
 }
