@@ -1,6 +1,17 @@
 /* eslint-disable no-unused-vars */
 
-    let palabras = ["hosting", "dominio", "react", "javascript", "frontend", "framework", "aplicacion", "backend", "ahorcado", "objeto"]
+    let palabras = [
+        "hosting",
+        "dominio",
+        "react",
+        "javascript",
+        "frontend",
+        "framework",
+        "aplicacion",
+        "backend",
+        "ahorcado",
+        "objeto"
+    ]
 
         /* let palabras = [
         {palabra: "hosting"},
