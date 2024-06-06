@@ -1,13 +1,24 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react'
 
 export const Teclado = ({palabraState}) => {
 
+  let claseOculta = "h-[2.5rem] w-[1.5rem] text-white text-lg text-center rounded-lg font-bold";
+  let claseVisible = "h-[2.5rem] w-[1.5rem] text-[#87174D] text-lg text-center rounded-lg font-bold";
+
   const enviar = e => {
     e.preventDefault();
 
     let letra = e.target.value;
+    let filtradas = palabraState.filter(letraState => {
+      return letraState === letra;
+    })
     
+    console.log(filtradas);
+    
+    let cambiar = document.getElementsByName(filtradas[0]);
+    cambiar.length > 0 && cambiar.forEach(cambio => { cambio.classList.add('text-red-500')})
 
   }
 

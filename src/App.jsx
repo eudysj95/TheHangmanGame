@@ -10,8 +10,11 @@ function App() {
 
   const [palabraState, setPalabraState] = useState([]);
 
+
+
   useEffect(() => {
       rellenar(palabras);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   const rellenar = (palabras) => {
@@ -20,12 +23,12 @@ function App() {
     let palabra = palabras[aleatorio].toUpperCase();
     let array = palabra.split('');
     setPalabraState(array);
-
+    console.log(array);
   }
 
   return (
     <div className="bg-[#73C7E4] flex min-h-screen justify-center items-center">
-      <div className="bg-[#FFEEF1] p-2 min-h-[30rem] min-w-[28rem] rounded-lg">
+      <div className="bg-[#FFEEF1] p-2 min-h-[30rem] min-w-[20rem] rounded-lg">
         <div className="bg-[#E0D1D4] h-60 flex flex-col justify-between p-2">
           <div className="w-full h-44 border-2 border-blue-500">
             <Ahorcado />
