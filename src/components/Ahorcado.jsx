@@ -15,7 +15,6 @@ export const Ahorcado = ({ahorcadoState}) => {
           {ahorcadoState == 4 && <img className='h-36 w-40 mx-auto mt-2' src={ahorcado.ahorcado4} alt="img" />}
           {ahorcadoState == 5 && <img className='h-36 w-40 mx-auto mt-2' src={ahorcado.ahorcado5} alt="img" />}
           {ahorcadoState == 6 && <img className='h-36 w-40 mx-auto mt-2' src={ahorcado.ahorcado6} alt="img" />}
-
     </>
   )
 }
