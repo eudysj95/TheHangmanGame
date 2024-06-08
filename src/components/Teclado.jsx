@@ -1,8 +1,10 @@
+
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useMemo } from 'react'
 
-export const Teclado = ({palabraState}) => {
+// eslint-disable-next-line react/display-name
+export const Teclado = ({palabraState, ahorcadoState, setAhorcadoState}) => {
 
   let claseOculta = "h-[2.5rem] w-[1.5rem] text-white text-lg text-center rounded-lg font-bold";
   let claseVisible = "h-[2.5rem] w-[1.5rem] text-[#87174D] text-lg text-center rounded-lg font-bold";
@@ -14,11 +16,15 @@ export const Teclado = ({palabraState}) => {
     let filtradas = palabraState.filter(letraState => {
       return letraState === letra;
     })
+
+    if(filtradas.length > 0){
+      let cambiar = document.getElementsByName(filtradas[0]);
+      cambiar.forEach(cambio => { cambio.classList.add('text-red-700')})
+      console.log(cambiar)
+    }else{
+      setAhorcadoState(ahorcadoState+1);
+    }    
     
-    console.log(filtradas);
-    
-    let cambiar = document.getElementsByName(filtradas[0]);
-    cambiar.length > 0 && cambiar.forEach(cambio => { cambio.classList.add('text-red-500')})
 
   }
 

@@ -1,9 +1,11 @@
+/* eslint-disable react/display-name */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import palabras from './palabras';
 
-export const Ocultas = ({palabraState}) => {
+
+export const Ocultas = React.memo(({palabraState}) => {
   
 
   return (
@@ -16,4 +18,4 @@ export const Ocultas = ({palabraState}) => {
             
     </div>
   )
-}
+})

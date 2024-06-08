@@ -9,6 +9,7 @@ import palabras from "./components/palabras";
 function App() {
 
   const [palabraState, setPalabraState] = useState([]);
+  const [ahorcadoState, setAhorcadoState] = useState(0);
 
 
 
@@ -30,8 +31,8 @@ function App() {
     <div className="bg-[#73C7E4] flex min-h-screen justify-center items-center">
       <div className="bg-[#FFEEF1] p-2 min-h-[30rem] min-w-[20rem] rounded-lg">
         <div className="bg-[#E0D1D4] h-60 flex flex-col justify-between p-2">
-          <div className="w-full h-44 border-2 border-blue-500">
-            <Ahorcado />
+          <div className="w-full h-44">
+            <Ahorcado ahorcadoState={ahorcadoState} setAhorcadoState={setAhorcadoState}/>
           </div>
 
           <div className="w-full h-16 mt-2">
@@ -40,7 +41,7 @@ function App() {
         </div>
 
         <div className="h-56 mt-4">
-          <Teclado palabraState={palabraState}/>
+          <Teclado palabraState={palabraState} ahorcadoState={ahorcadoState} setAhorcadoState={setAhorcadoState}/>
         </div>
       </div>
     </div>
