@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import "./App.css";
@@ -10,13 +11,16 @@ function App() {
 
   const [palabraState, setPalabraState] = useState([]);
   const [ahorcadoState, setAhorcadoState] = useState(0);
+  const [contadorAhorcado, setContadorAhorcado] = useState(0);
+  const [rellenarState, setRellenarState] = useState(0);
 
 
 
   useEffect(() => {
       rellenar(palabras);
+      setRellenarState(0);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+  },[rellenarState])
 
   const rellenar = (palabras) => {
 
@@ -40,8 +44,8 @@ function App() {
           </div>
         </div>
 
-        <div className="h-56 mt-4">
-          <Teclado palabraState={palabraState} ahorcadoState={ahorcadoState} setAhorcadoState={setAhorcadoState}/>
+        <div className="h-60 mt-4">
+          <Teclado palabraState={palabraState} ahorcadoState={ahorcadoState} setAhorcadoState={setAhorcadoState} contadorAhorcado={contadorAhorcado} setContadorAhorcado={setContadorAhorcado} setRellenarState={setRellenarState} />
         </div>
       </div>
     </div>
